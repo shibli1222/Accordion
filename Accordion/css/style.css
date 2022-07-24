@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+body {
+  background-color: aquamarine;
+  height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.accordion {
+  max-width: 850px;
+}
+.portion {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.hed {
+  width: 100%;
+  background-color: rgb(94, 29, 168);
+  color: #ffff;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.accordion .portion.active .hed {
+  background-color: rgb(16, 6, 155);
+}
+
+.hed::before {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin: auto;
+  content: "";
+}
+
+.hed::after {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin: auto;
+  content: "+";
+  text-align: center;
+  line-height: 30px;
+}
+.accordion .portion.active .hed::after {
+  content: "-";
+}
+.content {
+  width: 100%;
+  height: 0;
+  background-color: #ffff;
+  padding: 0;
+  overflow-y: hidden;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.accordion .portion.active .content {
+  height: auto;
+  padding: 20px;
+}
